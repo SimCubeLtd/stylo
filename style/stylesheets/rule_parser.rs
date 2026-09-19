@@ -497,7 +497,7 @@ impl<'a, 'i> QualifiedRuleParser<'i> for TopLevelRuleParser<'a, 'i> {
 }
 
 #[repr(transparent)]
-#[derive(Deref, DerefMut)]
+#[derive(derive_more::Deref, derive_more::DerefMut)]
 struct NestedRuleParser<'a, 'i>(TopLevelRuleParser<'a, 'i>);
 
 struct NestedParseResult {

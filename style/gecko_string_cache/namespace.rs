@@ -47,7 +47,7 @@ impl PrecomputedHash for Namespace {
 }
 
 /// A Gecko WeakNamespace is a wrapped WeakAtom.
-#[derive(Deref, Hash)]
+#[derive(derive_more::Deref, Hash)]
 pub struct WeakNamespace(WeakAtom);
 
 impl Deref for Namespace {

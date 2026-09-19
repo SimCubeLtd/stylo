@@ -275,7 +275,7 @@ impl ElementCascadeInputs {
 /// Statistics gathered during the traversal. We gather statistics on each
 /// thread and then combine them after the threads join via the Add
 /// implementation below.
-#[derive(AddAssign, Clone, Default)]
+#[derive(derive_more::AddAssign, Clone, Default)]
 pub struct PerThreadTraversalStatistics {
     /// The total number of elements traversed.
     pub elements_traversed: u32,

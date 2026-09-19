@@ -959,7 +959,7 @@ impl ByTo {
 /// https://drafts.csswg.org/css-shapes-2/#typedef-shape-coordinate-pair
 #[allow(missing_docs)]
 #[derive(
-    AddAssign,
+    derive_more::AddAssign,
     Animate,
     Clone,
     ComputeSquaredDistance,

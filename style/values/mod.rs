@@ -149,7 +149,7 @@ where
     Clone,
     Debug,
     Default,
-    Deref,
+    derive_more::Deref,
     Eq,
     Hash,
     MallocSizeOf,
@@ -220,7 +220,7 @@ impl<'a> From<&'a str> for AtomString {
 /// A generic CSS `<ident>` stored as an `Atom`.
 #[cfg(feature = "servo")]
 #[repr(transparent)]
-#[derive(Deref)]
+#[derive(derive_more::Deref)]
 pub struct GenericAtomIdent<Set>(pub string_cache::Atom<Set>)
 where
     Set: string_cache::StaticAtomSet;
@@ -354,7 +354,7 @@ impl<Set: string_cache::StaticAtomSet> GenericAtomIdent<Set> {
 #[cfg(feature = "gecko")]
 #[repr(transparent)]
 #[derive(
-    Clone, Debug, Default, Deref, Eq, Hash, MallocSizeOf, PartialEq, SpecifiedValueInfo, ToShmem,
+    Clone, Debug, Default, derive_more::Deref, Eq, Hash, MallocSizeOf, PartialEq, SpecifiedValueInfo, ToShmem,
 )]
 pub struct AtomIdent(pub Atom);
 

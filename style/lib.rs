@@ -31,7 +31,9 @@ extern crate bitflags;
 extern crate cssparser;
 #[macro_use]
 extern crate debug_unreachable;
-#[macro_use]
+// Not #[macro_use]: that would let derive_more's Debug shadow std's whenever
+// another crate in the build enables derive_more's "debug" feature, and that
+// expansion overflows on the recursive calc and transform types.
 extern crate derive_more;
 #[macro_use]
 #[cfg(feature = "gecko")]

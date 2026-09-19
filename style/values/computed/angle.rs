@@ -15,7 +15,7 @@ use style_traits::{CssWriter, ToCss};
 
 /// A computed angle in degrees.
 #[derive(
-    Add,
+    derive_more::Add,
     Animate,
     Clone,
     Copy,

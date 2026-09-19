@@ -1789,7 +1789,7 @@ impl Stylist {
 }
 
 /// A vector that is sorted in layer order.
-#[derive(Clone, Debug, Deref, MallocSizeOf)]
+#[derive(Clone, Debug, derive_more::Deref, MallocSizeOf)]
 pub struct LayerOrderedVec<T>(Vec<(T, LayerId)>);
 impl<T> Default for LayerOrderedVec<T> {
     fn default() -> Self {
@@ -1798,7 +1798,7 @@ impl<T> Default for LayerOrderedVec<T> {
 }
 
 /// A map that is sorted in layer order.
-#[derive(Clone, Debug, Deref, MallocSizeOf)]
+#[derive(Clone, Debug, derive_more::Deref, MallocSizeOf)]
 pub struct LayerOrderedMap<T>(PrecomputedHashMap<Atom, SmallVec<[(T, LayerId); 1]>>);
 impl<T> Default for LayerOrderedMap<T> {
     fn default() -> Self {

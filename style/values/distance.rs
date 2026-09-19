@@ -28,7 +28,7 @@ pub trait ComputeSquaredDistance {
 }
 
 /// A distance between two animatable values.
-#[derive(Add, Clone, Copy, Debug, From, PartialEq, PartialOrd)]
+#[derive(derive_more::Add, Clone, Copy, Debug, derive_more::From, PartialEq, PartialOrd)]
 pub struct SquaredDistance {
     value: f64,
 }

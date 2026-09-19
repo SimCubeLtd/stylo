@@ -172,7 +172,7 @@ pub struct PerDocumentStyleDataImpl {
 
 /// The data itself is an `AtomicRefCell`, which guarantees the proper semantics
 /// and unexpected races while trying to mutate it.
-#[derive(Deref)]
+#[derive(derive_more::Deref)]
 pub struct PerDocumentStyleData(AtomicRefCell<PerDocumentStyleDataImpl>);
 
 impl PerDocumentStyleData {
